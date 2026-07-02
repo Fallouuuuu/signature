@@ -1,0 +1,12 @@
+# Vercel
+.vercel
+
+# OS
+.DS_Store
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Dépendances (aucune pour ce projet statique, mais au cas où)
+node_modules/
