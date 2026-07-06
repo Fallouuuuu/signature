@@ -8,11 +8,23 @@ intégré (embarqué en base64, s'affiche partout, y compris sur mobile et hors 
 
 1. Ouvrir la page (en local : ouvrir `index.html` dans un navigateur ; en ligne : l'URL Vercel).
 2. Remplir les champs du collègue. L'aperçu se met à jour en temps réel.
-3. **« Copier la signature »** puis coller dans la configuration de signature :
-   - **Gmail** : Paramètres → Voir tous les paramètres → Signature → Ctrl/Cmd+V
-   - **Outlook** : Fichier → Options → Courrier → Signatures
-   - **Apple Mail** : Réglages → Signatures
-4. Ou **« Télécharger .html »** pour archiver un fichier par personne.
+3. Choisir un **style de signature** parmi 4 templates : Classique, Compact, Moderne, Bandeau.
+4. Exporter au format voulu :
+   - **« Copier la signature »** (HTML riche) puis coller dans la config de signature :
+     - **Gmail** : Paramètres → Voir tous les paramètres → Signature → Ctrl/Cmd+V
+     - **Outlook** : Fichier → Options → Courrier → Signatures
+     - **Apple Mail** : Réglages → Signatures
+   - **« Copier le code HTML »** pour les outils qui demandent le code source.
+   - **« Télécharger .html »** pour archiver un fichier par personne.
+
+## Templates disponibles
+
+- **Classique** — logo à gauche, barre verticale verte, infos à droite.
+- **Compact** — mise en page sur une ligne, minimaliste (idéal mobile).
+- **Moderne** — logo en haut, bloc aéré avec accent de marque.
+- **Bandeau** — bloc à fond vert GAFA, texte blanc, plus visuel.
+
+Tous les templates restent en mise en page `<table>` pour la compatibilité clients mail.
 
 ## Détails techniques
 
@@ -20,6 +32,9 @@ intégré (embarqué en base64, s'affiche partout, y compris sur mobile et hors 
 - Le logo GAFA est embarqué en base64 dans le HTML → aucune dépendance réseau,
   s'affiche même quand le client mail bloque les images externes.
 - Couleur de marque : vert GAFA `#3F8A49` (extrait du logo officiel).
+- Interface modernisée : cartes, ombres douces, aperçu en direct, sélecteur de templates.
+- Exports multi-format : copie HTML riche (`ClipboardItem` avec repli `execCommand`),
+  copie du code source (`writeText`), et téléchargement `.html` autonome.
 - Mise en page en `<table>` pour la compatibilité avec les clients mail.
 
 ## Déploiement (Vercel)
